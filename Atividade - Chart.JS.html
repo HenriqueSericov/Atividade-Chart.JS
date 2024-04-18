@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade - Chart.JS</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="Container_Grafico">
+            <canvas id="Meu_Grafico_1"></canvas>
+        </div>
+    
+        <div class="Container_Grafico">
+            <canvas id="Meu_Grafico_2"></canvas>
+        </div>
+    </div>
+      
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+    <script>
+                
+        const ctx2 = document.getElementById('Meu_Grafico_1');
+        new Chart(ctx2, {
+            type: 'line', 
+            data: {
+                labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+                datasets: [
+                    {
+                        label: 'Umidade',
+                        data: [80, 82, 80, 85, 80, 83], 
+                        borderWidth: 1
+
+                    },
+                    {
+                        label: 'Temperatura',
+                        data: [30, 29, 28, 25, 22, 23], 
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        
+        const ctx = document.getElementById('Meu_Grafico_2');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+                datasets: [
+                    {
+                        label: 'Umidade Media',
+                        data: [90, 89, 93, 87,88, 82],
+                        borderWidth: 1
+
+                    },
+                    {
+                        label: 'Temperatura Media',
+                        data: [22, 24, 27, 23, 20, 18],
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

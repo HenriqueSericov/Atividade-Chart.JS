@@ -1,0 +1,8 @@
+.container {
+    display: flex;
+}
+
+.Container_Grafico {
+    flex: 1;
+    margin: 10px;
+}
